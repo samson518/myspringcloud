@@ -1,0 +1,28 @@
+server:
+  port: 8809
+  servlet:
+    context-path: /gateway
+spring:
+  gateway:
+    discovery:
+      locator:
+        enabled: true
+        lowerCaseServiceId: false
+    httpclient:
+      pool:
+        max-connections: 5000
+        acquire-timeout: 1500
+  application:
+    name: api-gateway
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: TRACE
