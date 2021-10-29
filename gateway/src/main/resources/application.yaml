@@ -1,5 +1,5 @@
 server:
-  port: 8809
+  port: 9000
   servlet:
     context-path: /gateway
 spring:
@@ -7,13 +7,13 @@ spring:
     discovery:
       locator:
         enabled: true
-        lowerCaseServiceId: false
+        lowerCaseServiceId: true
     httpclient:
       pool:
         max-connections: 5000
         acquire-timeout: 1500
   application:
-    name: api-gateway
+    name: gateway-server
 eureka:
   instance:
     prefer-ip-address: true
